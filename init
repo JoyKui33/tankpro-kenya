@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -e
+
+echo "🚀 Initializing TankPro Kenya project..."
+
+# Create directory structure
+mkdir -p assets
+
+# Create robots.txt
+cat > robots.txt << 'EOF'
+User-agent: *
+Allow: /
+Sitemap: https://www.tankprokenya.co.ke/sitemap.xml
+EOF
+echo "✅ Created robots.txt"
+
+# Create sitemap.xml
+cat > sitemap.xml << 'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.tankprokenya.co.ke/</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+EOF
+echo "✅ Created sitemap.xml"
+
+# Create assets/.gitkeep so the folder is tracked by git
+touch assets/.gitkeep
+echo "✅ Created assets/ directory"
+
+echo ""
+echo "📁 Project structure:"
+echo "  ├── index.html"
+echo "  ├── robots.txt"
+echo "  ├── sitemap.xml"
+echo "  ├── assets/"
+echo "  │   ├── logo.png        (add your logo here)"
+echo "  │   ├── og-image.jpg    (1200x630 social share image)"
+echo "  │   └── favicon.ico     (browser tab icon)"
+echo "  └── CLAUDE_CODE.md"
+echo ""
+echo "✅ TankPro Kenya project initialized!"
+echo ""
+echo "Next steps:"
+echo "  1. Add assets/logo.png, assets/og-image.jpg, assets/favicon.ico"
+echo "  2. Update contact info in index.html (phone, email, address)"
+echo "  3. Deploy to GitHub Pages, Netlify, or Vercel"
