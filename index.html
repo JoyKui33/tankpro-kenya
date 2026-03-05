@@ -466,11 +466,19 @@
             overflow: hidden;
         }
         .hero-tank-img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: contain;
             mix-blend-mode: multiply;
             padding: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .hero-tank-img.active {
+            opacity: 1;
         }
 
         /* === SECTION STYLING === */
@@ -1099,7 +1107,10 @@
                 <div class="hero-visual">
                     <div class="hero-card">
                         <div class="hero-card-img">
-                            <img src="assets/tank.png" alt="Clean Water Tank" class="hero-tank-img">
+                            <img src="assets/tank.png" alt="Plastic Water Tank" class="hero-tank-img active">
+                            <img src="assets/tank-2.jpeg" alt="Steel Water Tank" class="hero-tank-img">
+                            <img src="assets/tank-3.jpeg" alt="Industrial Water Tank" class="hero-tank-img">
+                            <img src="assets/tank-4.jpeg" alt="Elevated Water Tank" class="hero-tank-img">
                         </div>
                     </div>
                 </div>
@@ -1501,6 +1512,15 @@
                 }
             });
         });
+
+        // Tank image carousel
+        const tankImages = document.querySelectorAll('.hero-tank-img');
+        let currentTank = 0;
+        setInterval(() => {
+            tankImages[currentTank].classList.remove('active');
+            currentTank = (currentTank + 1) % tankImages.length;
+            tankImages[currentTank].classList.add('active');
+        }, 3500);
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
