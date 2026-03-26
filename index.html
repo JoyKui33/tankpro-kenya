@@ -241,6 +241,14 @@
             width: auto;
             object-fit: contain;
         }
+        .nav-motto {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
         .nav-links {
             display: flex;
             align-items: center;
@@ -387,36 +395,6 @@
         }
         .hero-content {
             animation: slideInLeft 0.8s cubic-bezier(0.25, 0, 0.2, 1) forwards;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--green);
-            margin-bottom: 24px;
-            box-shadow: var(--shadow-sm);
-        }
-        .hero-badge .dot {
-            width: 8px;
-            height: 8px;
-            min-width: 8px;
-            background: var(--green);
-            border-radius: 50%;
-            position: relative;
-        }
-        .hero-badge .dot::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--green);
-            border-radius: 50%;
-            animation: ripple 2s infinite;
         }
         .hero h1 {
             font-size: clamp(2.4rem, 5vw, 3.6rem);
@@ -1051,6 +1029,7 @@
             section { padding: 72px 0; }
             .nav-inner { height: 72px; }
             .nav-logo img { height: 64px; }
+            .nav-motto { display: none; }
             .nav-links { display: none; }
             .nav-links.open {
                 display: flex;
@@ -1151,6 +1130,7 @@
         <div class="container nav-inner">
             <a href="#" class="nav-logo" aria-label="TankPro Kenya Home">
                 <img src="assets/logo.png" alt="TankPro Kenya : Tank Cleaning Specialists">
+                <span class="nav-motto">Don't Just Fill It — Clean It</span>
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#services">Services</a>
@@ -1170,10 +1150,6 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="dot"></span>
-                        Don't Just Fill It — Clean It
-                    </div>
                     <h1>Clean Water Starts With a <span class="highlight">Clean Tank</span></h1>
                     <p>Kenya's leading water tank cleaning specialists. We ensure your family drinks safe, clean water with professional tank cleaning, disinfection, and maintenance services across Nairobi and beyond.</p>
                     <div class="hero-actions">
